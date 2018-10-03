@@ -1,0 +1,8 @@
+[2018-08-04 02:31:38] App Log.INFO: Login userId:2 [] []
+[2018-08-04 02:33:10] App Log.ERROR: Logout userId:2 [] []
+[2018-08-04 02:51:39] App Log.INFO: Login userId:2 [] []
+[2018-08-19 22:54:12] App Log.INFO: Login userId:2 [] []
+[2018-08-19 22:56:38] App Log.ERROR: Logout userId:2 [] []
+[2018-08-19 23:25:57] App Log.INFO: Login userId:2 [] []
+[2018-10-03 05:03:43] App Log.INFO: Login userId:2 [] []
+[2018-10-03 05:04:00] App Log.ERROR: Logout userId:2 [] []

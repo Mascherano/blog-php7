@@ -1,0 +1,20 @@
+{% extends 'Layout.twig' %}
+{% block content %}
+    <div class="blog-post">
+        <p>
+            <a class="btn btn-default"href="{{ '/' | url }}">Back</a>
+        </p>
+        {% for blogPost in blogPosts %}
+        <h2>{{ blogPost.title }}</h2>
+        <p>Jan 1,2020 by <ahref="">Marcelo</a></p>
+        {% if blogPost.img_url %}
+            <div class="blog-post-image" >
+                <img src="{{ blogPost.img_url }}"style="width: 55vw; height: 60vh; background: gray;">
+            </div>
+        {% endif %}
+        <div class="blog-post-content">
+            {{ blogPost.content }}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

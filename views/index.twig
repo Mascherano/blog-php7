@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+{% block content %}
+    {% for blogPost in blogPosts %}
+        <div class="row blog-post">
+            <div class="col-12">
+                <h2><a href="{{ 'detail/' | url }}{{ blogPost.id }}">{{ blogPost.title }}</a></h2>
+                <p>Jan 1, 2018 by <ahref="">Leonardo</a></p>
+            </div>
+            {% if blogPost.img_url %}
+                <div class="col-4 blog-post-image">
+                    <img class="img-fluid"src="{{ blogPost.img_url }}"alt="">
+                </div>
+                <div class="col-8 blog-post-content">{{ blogPost.content }}</div>
+            {% else %}
+                <div class="col-12 blog-post-content">{{ blogPost.content }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+  
+    {% include 'partials/pagination.twig' %}
+{% endblock %}

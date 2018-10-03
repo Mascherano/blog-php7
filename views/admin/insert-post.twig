@@ -1,0 +1,42 @@
+{% extends "layout.twig" %}
+{% block content %}
+    <h2>New Post</h2>
+    <p><a class="btn btn-default" href="{{ 'admin/posts' | url }}">Back</a></p>
+    {% if errors %}
+        {% include('partials/errors.twig') %}
+    {% endif %}
+    {% if resultado %}
+        <div class="alert alert-success">Post guardado correctamente</div>
+    {% endif %}
+    <form method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="inputTitle">Title</label>
+            <input class="form-control" type="text" name="title" id="inputTitle">
+        </div>
+        <div class="form-group">
+            <label for="inputImg">Image</label>
+            <input class="form-control" type="text" name="img" id="inputImg">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="content" id="inputContent" rows="5"></textarea>
+        </div>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Guardar">
+    </form>
+{% endblock %}
+{% block js %}
+    <script>
+        function validateForm(){
+            var title = document.getElementById('inputTitle').value.trim();
+            if(title === ''){
+                swal(
+                    'Oeee!!',
+                    'Algo hisiste mal! Ponte máh vioh!',
+                    'error'
+                );
+
+                return false;
+            }
+        }
+    </script>
+{% endblock %}
